@@ -2,7 +2,8 @@
 A weather app made in ReactJS/Nextjs.
 
 ## Things used/learned
-- ReactJS
+- React
+- TypeScript
 - NextJS
 - Tailwind CSS
 - Markdown
