@@ -15,7 +15,6 @@ import { useQuery } from "react-query";
 import { loadingCityAtom, placeAtom } from "./atom";
 import { useEffect } from "react";
 
-//api.openweathermap.org/data/2.5/forecast?q=pune&appid=d400fabd9dede0b38f7130d033fe75eb
 interface WeatherData {
   cod: string;
   message: number;
@@ -75,6 +74,8 @@ interface City {
   sunset: number;
 }
 
+const API_KEY=process.env.NEXT_PUBLIC_API_KEY;
+
 export default function Home() {
 
   const [place, setPlace]=useAtom(placeAtom);
@@ -84,7 +85,7 @@ export default function Home() {
     "repoData",
     async () => {
       const { data } = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=d400fabd9dede0b38f7130d033fe75eb&cnt=56`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${API_KEY}&cnt=56`
       );
       return data;
     }

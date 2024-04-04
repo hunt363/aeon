@@ -8,6 +8,7 @@ import SearchBox from "./SearchBox";
 import axios from "axios";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
+const API_KEY=process.env.NEXT_PUBLIC_API_KEY;
 
 type Props={location?: string}
 
@@ -22,7 +23,7 @@ export default function Navbar({location}: Props){
         setCity(value);
         if(value.length>=3){
             try{
-                const response=await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${value}&appid=d400fabd9dede0b38f7130d033fe75eb`);
+                const response=await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${value}&appid=${API_KEY}`);
                 const suggestions =response.data.list.map((item:any)=>item.name);
                 setSuggestions(suggestions);
                 setError('');
