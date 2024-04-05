@@ -41,7 +41,7 @@ export interface DetailProps{
 }
 function Detail(props: DetailProps){
     return(
-        <div className="flex flex-col justify-between gap-2 items-center text-xs font-semibold text-black/80">
+        <div className="flex flex-col justify-between gap-2 items-center text-xs font-semibold text-text">
             <p className="whitespace-nowrap">{props.property}</p>
             <div className="text-3xl">{props.icon}</div>
             <p>{props.value}</p>

@@ -113,13 +113,13 @@ export default function Home() {
 
   if (isLoading)
     return (
-      <div className="flex items-center min-h-screen justify-center">
+      <div className="flex items-center min-h-screen justify-center bg-ctp-crust text-ctp-text">
         <p className="animate-bounce">Loading...</p>
       </div>
     );
 
   return (
-    <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
+    <div className="flex flex-col gap-4 bg-ctp-crust text-ctp-text min-h-screen">
       <Navbar location={data?.city.name}/>
       <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
         {loadingCity? <WeatherSkeleton/>:
@@ -152,7 +152,7 @@ export default function Home() {
                   </span>
                 </p>
               </div>
-              <div className="flex gap-10 sm:gap-16 overflow-x-auto w-full justify-between pr-3">
+              <div className="flex gap-10 sm:gap-16 scrollbar-thin scrollbar-track-ctp-mantle scrollbar-thumb-ctp-lavender overflow-x-auto w-full justify-between pr-3 pb-5">
                 {data?.list.map((d, i) => (
                   <div
                     key={i}
@@ -178,7 +178,7 @@ export default function Home() {
                   iconName={getDayOrNightIcon(firstData?.weather[0].icon??"", firstData?.dt_txt??"")}
                 />
               </Container>
-              <Container className="bg-purple-300/80 px-6 gap-4 justify-between overflow-x-auto">
+              <Container className="bg-ctp-base px-6 gap-4 justify-between overflow-x-auto scrollbar-thin scrollbar-track-ctp-mantle scrollbar-thumb-ctp-lavender">
                 <WeatherDetails
                   visibility={firstData?.visibility.toString()+"m"??""}
                   airPressure={firstData?.main.pressure+" hPa"??""}
@@ -231,17 +231,17 @@ function WeatherSkeleton() {
       <div className="space-y-2 animate-pulse">
         {/* Date skeleton */}
         <div className="flex gap-1 text-2xl items-end ">
-          <div className="h-6 w-24 bg-gray-300 rounded"></div>
-          <div className="h-6 w-24 bg-gray-300 rounded"></div>
+          <div className="h-6 w-24 bg-ctp-base rounded"></div>
+          <div className="h-6 w-24 bg-ctp-base rounded"></div>
         </div>
 
         {/* Time wise temperature skeleton */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[1, 2, 3, 4].map((index) => (
             <div key={index} className="flex flex-col items-center space-y-2">
-              <div className="h-6 w-16 bg-gray-300 rounded"></div>
-              <div className="h-6 w-6 bg-gray-300 rounded-full"></div>
-              <div className="h-6 w-16 bg-gray-300 rounded"></div>
+              <div className="h-6 w-16 bg-ctp-base rounded"></div>
+              <div className="h-6 w-6 bg-ctp-base rounded-full"></div>
+              <div className="h-6 w-16 bg-ctp-base rounded"></div>
             </div>
           ))}
         </div>
@@ -249,14 +249,14 @@ function WeatherSkeleton() {
 
       {/* 7 days forecast skeleton */}
       <div className="flex flex-col gap-4 animate-pulse">
-        <p className="text-2xl h-8 w-36 bg-gray-300 rounded"></p>
+        <p className="text-2xl h-8 w-36 bg-ctp-base rounded"></p>
 
         {[1, 2, 3, 4, 5, 6, 7].map((index) => (
           <div key={index} className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
-            <div className="h-8 w-28 bg-gray-300 rounded"></div>
-            <div className="h-10 w-10 bg-gray-300 rounded-full"></div>
-            <div className="h-8 w-28 bg-gray-300 rounded"></div>
-            <div className="h-8 w-28 bg-gray-300 rounded"></div>
+            <div className="h-8 w-28 bg-ctp-base rounded"></div>
+            <div className="h-10 w-10 bg-ctp-base rounded-full"></div>
+            <div className="h-8 w-28 bg-ctp-base rounded"></div>
+            <div className="h-8 w-28 bg-ctp-base rounded"></div>
           </div>
         ))}
       </div>

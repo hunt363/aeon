@@ -15,6 +15,13 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@catppuccin/tailwindcss")({
+      prefix: "ctp",
+      defaultFlavour: "mocha",
+    }),
+    require('tailwind-scrollbar'),
+  ],
 };
+
 export default config;
