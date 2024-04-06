@@ -27,7 +27,7 @@ export default function Forecast(props:ForecastProps){
     }=props;
     return(
         <Container className="gap-4">
-            <section className="flex gap-4 items-center px-4">
+            <section className="flex gap-4 items-center">
                 <div className="flex flex-col gap-1 items-center">
                     <WeatherIcon iconName={weatherIcon}/>
                     <p>{date}</p>
@@ -43,7 +43,7 @@ export default function Forecast(props:ForecastProps){
                 </div>
             </section>
 
-            <section className="overflow-x-auto flex justify-between gap-4 px-4 w-full pr-10">
+            <section className="overflow-x-auto scrollbar-thin scrollbar-track-ctp-mantle scrollbar-thumb-ctp-lavender flex justify-between gap-4 px-4 w-full pr-10">
                 <WeatherDetails{...props}/>
             </section>
         </Container>

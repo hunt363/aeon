@@ -184,8 +184,8 @@ export default function Home() {
                   airPressure={firstData?.main.pressure+" hPa"??""}
                   windSpeed={convertWindSpeed(firstData?.wind.speed??0)}
                   humidity={firstData?.main.humidity+"%"??""}
-                  sunrise={format(fromUnixTime(data?.city.sunrise??0),"H:mm")}
-                  sunset={format(fromUnixTime(data?.city.sunrise??0),"H:mm")}
+                  sunrise={format(fromUnixTime(data?.city.sunrise??0),"hh:mm a")}
+                  sunset={format(fromUnixTime(data?.city.sunset??0),"hh:mm a")}
                 />
               </Container>
             </div>
@@ -199,7 +199,7 @@ export default function Home() {
                   description={d?.weather[0].description ?? ""}
                   weatherIcon={d?.weather[0].icon ?? "01d"}
                   date={d ? format(parseISO(d.dt_txt), "dd/MM") : ""}
-                  day={d ? format(parseISO(d.dt_txt), "dd/MM") : "EEEE"}
+                  day={d ? format(parseISO(d.dt_txt), "EEEE") : "EEEE"}
                   feels_like={d?.main.feels_like ?? 0}
                   temp={d?.main.temp ?? 0}
                   temp_max={d?.main.temp_max ?? 0}
@@ -208,11 +208,11 @@ export default function Home() {
                   humidity={`${d?.main.humidity}% `}
                   sunrise={format(
                     fromUnixTime(data?.city.sunrise ?? 0),
-                    "H:mm"
+                    "hh:mm a"
                   )}
                   sunset={format(
                     fromUnixTime(data?.city.sunset ?? 0),
-                    "H:mm"
+                    "hh:mm a"
                   )}
                   visibility={`${(d?.visibility ?? 10000)}m`}
                   windSpeed={`${convertWindSpeed(d?.wind.speed ?? 1.64)} `}
