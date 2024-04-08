@@ -24,12 +24,12 @@ export default function WeatherDetails(props: Props){
     }=props;
     return (
     <>
-        <Detail property="Visibility" icon={<LuEye/>} value={visibility}/>
-        <Detail property="Humidity" icon={<FiDroplet/>} value={humidity}/>
-        <Detail property="Wind Speed" icon={<MdAir/>} value={windSpeed}/>
-        <Detail property="Air Pressure" icon={<ImMeter/>} value={airPressure}/>
-        <Detail property="Sunrise" icon={<LuSunrise/>} value={sunrise}/>
-        <Detail property="Sunset" icon={<LuSunset/>} value={sunset}/>
+        <Detail property="Visibility" icon={<LuEye className="text-ctp-teal"/>} value={visibility}/>
+        <Detail property="Humidity" icon={<FiDroplet className="text-ctp-blue"/>} value={humidity}/>
+        <Detail property="Wind Speed" icon={<MdAir className="text-ctp-green"/>} value={windSpeed}/>
+        <Detail property="Air Pressure" icon={<ImMeter className="text-ctp-yellow"/>} value={airPressure}/>
+        <Detail property="Sunrise" icon={<LuSunrise className="text-ctp-red"/>} value={sunrise}/>
+        <Detail property="Sunset" icon={<LuSunset className="text-ctp-red"/>} value={sunset}/>
     </>
     )
 }
@@ -41,10 +41,10 @@ export interface DetailProps{
 }
 function Detail(props: DetailProps){
     return(
-        <div className="flex flex-col justify-between gap-2 items-center text-xs font-semibold text-black/80">
+        <div className="flex flex-col justify-between gap-2 items-center text-xs font-semibold text-text">
             <p className="whitespace-nowrap">{props.property}</p>
             <div className="text-3xl">{props.icon}</div>
-            <p>{props.value}</p>
+            <p className="whitespace-nowrap">{props.value}</p>
         </div>
     )
 }

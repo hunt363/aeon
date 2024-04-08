@@ -18,11 +18,12 @@ export default function SearchBox(props: Props){
                 onChange={props.onChange}
                 placeholder="Search location..."
                 className="px-4 py-2 w-[230px] border
-                    border-gray-300 rounded-l-md focus:outline-none
-                    focus:border-purple-600 h-full
+                    bg-ctp-crust
+                    border-ctp-crust rounded-l-md focus:outline-none
+                    focus:border-ctp-lavender h-full
                 "
             />
-            <button className="px-4 py-[9px] bg-purple-600 text-white rounded-r-md focus:outline-none hover:bg-purple-500 whitespace-nowrap h-full">
+            <button className="px-4 py-[9px] bg-ctp-lavender text-ctp-base rounded-r-md focus:outline-none hover:bg-ctp-lavender/90 whitespace-nowrap h-full">
                 <MdSearch/>
             </button>
         </form>
